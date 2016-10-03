@@ -1,0 +1,99 @@
+body{
+	padding: 0px;
+	margin: 0px;
+}
+
+.search-panel{
+	display: flex;
+}
+
+
+.frendly-links{
+	min-width: 10px;
+	height: 40px;
+	font-size: 10px;
+	display: flex;
+	line-height: 40px;
+}
+
+.frendly-links a{
+	padding-left: 10px;
+	text-decoration: none;
+	padding-right: 10px;
+}
+
+.frendly-links img{
+	padding: 0px;
+	display: inline-block;
+	margin-bottom: -5px;
+}
+
+img.logo{
+	width: 100px;
+	height: 100px;
+	padding: 10px;
+}
+
+.search-text{
+    padding: 10px;
+    font-size: 20px;
+    background-color: #fead03;
+    border: 1px solid #000;
+    margin-right: 10px;
+	margin-top: 10px;
+}
+
+.search-button{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 20px;
+    display: inline-block;
+    background: #000;
+    color: white;
+    cursor: pointer;
+    border: 1px solid #000;
+    margin-top: 10px;
+}
+
+.record{
+	border-bottom: solid 1px black;
+	width: 80%;
+	padding-top: 10px;
+	text-align: left;
+}
+
+.recordtime{
+	font-size: 10px;
+	background-color: #ad03;
+	display: inline-block;
+}
+
+.recordtext{
+	padding: 5px;
+}
+
+.header{
+	display: block;
+	top: 0px;
+	left: 0px;
+	height: 120px;
+	text-align: center;
+}
+
+.h-logo{
+	height: 120px;
+	width: 120px;
+	display: inline-block;
+	float: left;
+}
+
+.h-panel{
+	height: 120px;
+	display: inline-block;
+	margin-left: -60px;
+}
+
+#search-result{
+	padding-left: 100px; 
+	padding-top: 10px;
+}

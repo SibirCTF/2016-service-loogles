@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Loogles</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+	<link href="css/index.css" rel="stylesheet" type="text/css">
+	<script src="js/jquery-3.1.1.min.js"></script>
+
+	<script>
+function search_loogles(){
+	var text = document.getElementById('search-text').value;
+	var el = document.getElementById('search-result');
+	el.innerHTML = "Searching information...";
+	$.ajax({
+		url: '/api/v1/search?query=' + text,
+		success: function(data) {
+			
+			if(data["objects"] && data["meta"]){
+				el.innerHTML = "Found " + data.meta.count + " records (Showing only 20)<br>";
+				for(var i in data.objects){
+					el.innerHTML += "" 
+						+ "<div class='record'>"
+						+ "	<div class='recordtime'>" + data.objects[i].recordtime + "</div>"
+						+ "	<div class='recordtext'>" + data.objects[i].record + "</div>"
+						+ "</div>"
+						;
+				}
+			}else{
+				el.innerHTML = "Found nothing...";
+			}
+		},
+		error: function(data){
+			var answer = JSON.parse(data.responseText);
+			el.innerHTML = answer.status + " " + answer.errorDetail;
+		}
+	});
+}
+	</script>
+</head>
+<body>
+	<div class="header">
+		<div class="h-logo">
+			<img class="logo" src="images/loogles.png">
+		</div>
+		<div class="h-panel">
+			<div class="frendly-links">
+				Frendly links:
+				<a href="http://localhost:3003/" target="_blank">RunAway</a>
+				<!-- <img src="images/runaway_logo.png">  -->
+			</div>
+			<div class="search-panel">
+				<input type="text" id="search-text" class="search-text" onkeypress="if(event.keyCode === 13) search_loogles();" value="" placeholder="Your request..."/>
+				<input type="submit" class="search-button" onclick="search_loogles();" value="Search in Loogles!"/>
+			</div>
+		</div>
+
+	</div>
+	<center>
+		<div id="search-result">
+			Hello! Can I help you?	
+		</div>
+	</center>
+</body>
+</html>
