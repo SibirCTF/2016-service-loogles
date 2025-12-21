@@ -3,13 +3,16 @@
   "display_name": "Loogles",
   "ctf_event": "Sibir CTF 2016",
   "year": 2016,
-  "description": "Emulation similar search system",
-  "author": null,
+  "description": "Эмуляция поисковой системы.",
+  "author": "Евгений Сопов",
   "service_port": 8087,
   "languages": [
     "C++"
   ],
   "tech_stack": [
+    "C++",
+    "Qt5",
+    "SQLite",
     "Debian"
   ],
   "dependencies": {
